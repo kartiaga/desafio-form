@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('nome1'),
                 document.getElementById('nome2'),
                 document.getElementById('nome3'),
-                document.getElementById('nome4')
+                document.getElementById('nome4'),
+                document.getElementById('nome5')
             ];
 
             nameInputs.forEach(input => {
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Trying the URL provided in the requirements
-                const response = await fetch('https://fsdt-contact-acf4ab9867a7.herokuapp.com/contact', {
+                const response = await fetch('https://fsdt-contact.onrender.com/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
