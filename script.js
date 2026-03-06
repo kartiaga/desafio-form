@@ -1,12 +1,9 @@
-/* script.js */
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('groupForm');
-
     if (form) {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Collect form data
             const names = [];
             const nameInputs = [
                 document.getElementById('nome1'),
@@ -36,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             try {
-                // Trying the URL provided in the requirements
                 const response = await fetch('https://fsdt-contact.onrender.com/contact', {
                     method: 'POST',
                     headers: {
@@ -47,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     alert('Formulário enviado com sucesso!');
-                    form.reset();
+                    nameInputs.forEach(input => { if (input) input.value = ''; });
+                    if (historiaInput) historiaInput.value = '';
                 } else {
                     alert('Ocorreu um erro ao enviar o formulário.');
                 }
